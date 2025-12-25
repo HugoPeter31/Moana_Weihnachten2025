@@ -85,9 +85,9 @@ def show_surprise() -> None:
     The chosen surprise is stored so it does not change unexpectedly.
     """
     wishes = [
-        "🎁 Lebkuchenhaus backen",
+        "🎄​ Lebkuchenhaus backen",
         "✨ Gemeinsam Guetzle",
-        "☕ Zusammen Squashen",
+        "🏃​ Zusammen Squashen",
     ]
 
     if st.button("🎄 Überraschung öffnen"):
