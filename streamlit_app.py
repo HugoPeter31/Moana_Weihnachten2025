@@ -1,4 +1,3 @@
-import base64
 import random
 import re
 import time
@@ -25,75 +24,88 @@ PHOTO_PATHS: List[str] = [
 ]
 
 PHOTO_CAPTIONS: List[str] = [
-    "Mier hends scho als chlini chindli immer guet gha😄",
-    "Im Trio hemer vieli schöni Moment döffe zeme ha und hoffentlich au nu in Zuekunft❤️",
-    "Mit dier hani scho schöni Erlebnis weg vo deheime döffe ha, sigs im Sprachufenthalt in Eastbourne✨",
-    "oder uf üsem intensive Interrail-Trip vo Wien bis nach Bologna 🇮🇹​",
-    "Ich freue mich uf witeri sportlichi, abenteurlustigi Ziite mit dier 🤸‍♀️​",
+    "Mier hends scho als chlini chindli immer guet gha 😄",
+    "Im Trio hemer vieli schöni Moment döffe zeme ha ❤️",
+    "Erlebnis weg vo deheime – Sprachufenthalt Eastbourne ✨",
+    "Interrail vo Wien bis Bologna 🇮🇹",
+    "Ich freue mich uf witeri sportlichi & abenteurlustigi Ziite 🤸‍♀️",
 ]
 
 FINAL_PERSONAL_TEXT = (
     "Liebi Moana\n\n"
     "Danke für all die schöne Moment womer bisher hend döffe zeme ha "
     "und dafür, dass du immer da bisch, wemer dich bruucht.\n\n"
-    "Du döfsch Stolz sie uf alles was du bisher erreicht hesch."
+    "Du döfsch stolz sii uf alles, was du bisher erreicht hesch.\n"
     "Bliib wie du bisch.\n\n"
-    "Ich freue mich auf alles, was chund und uf viele witeri schöni Moment zeme mit Dir❤️\n\n"
+    "Ich freue mich uf alles, was chund und uf vieli witeri "
+    "schöni Moment zeme mit dir ❤️\n\n"
     "Frohe Weihnachten! 🎄✨"
 )
 
-# 🎁 Gutschein-Generator
 COUPONS: List[Tuple[str, str]] = [
-    ("☕ Kaffee-Date", "Gömer mal zeme im Magdalena go käffele."),
-    ("🍪 Guetzli-Abend", "Gemeinsam Guetzli backen oder Lebkuechehuus."),
-    ("🏃 Squash-Match", "Gömer doch mal zeme go squashe oder im Früehlig wieder go Tennis spiele"),
+    ("☕ Kaffee-Date", "Gömer zeme im Magdalena go käffele."),
+    ("🍪 Guetzli-Abend", "Guetzli backe oder Lebkuechehuus."),
+    ("🏃 Squash-Match", "Squash oder im Frühlig Tennis spiele."),
 ]
 
-# 🧡 Kompliment-Maschine
 COMPLIMENT_BANK = {
     "Motivation": [
         "Du packsch das. Du hesch scho so viel gschafft 💪",
-        "Ich glaub fest a dich. ✨",
+        "Ich glaub fest a dich ✨",
         "Du bisch stärker als du meinst.",
     ],
     "Humor": [
         "Wenn Weihnachten e Sport wär, wärsch du MVP im Guetzli-Nasche 😄🍪",
     ],
     "Herz": [
-        "Ich bi mega dankbar für dich. Du bisch e grossi Bereicherung ❤️",
+        "Ich bi mega dankbar für dich ❤️",
         "Uf dich chamer immer zähle",
-        "Du hesch es grosses Herz – und das merkt jede.",
+        "Du hesch es grosses Herz.",
     ],
 }
 
 
 # =============================================================================
-# 🎨 FESTIVE THEME + BALLOONS
+# 🎨 DARK GREEN CHRISTMAS THEME + BALLOONS
 # =============================================================================
 def apply_festive_theme() -> None:
-    """Apply a festive Christmas theme via CSS."""
+    """Dark green Christmas background with bright content cards."""
     st.markdown(
         """
         <style>
         .stApp {
             background:
-                radial-gradient(circle at 15% 5%, rgba(205, 0, 0, 0.14), transparent 45%),
-                radial-gradient(circle at 85% 10%, rgba(0, 130, 0, 0.14), transparent 45%),
-                linear-gradient(180deg, rgba(255,255,255,0.98), rgba(252,252,252,0.98));
+                radial-gradient(circle at 20% 0%, rgba(40, 90, 60, 0.35), transparent 55%),
+                radial-gradient(circle at 80% 10%, rgba(20, 60, 40, 0.35), transparent 55%),
+                linear-gradient(180deg, #0f2e1f 0%, #143d2b 100%);
+        }
+
+        h1, h2, h3, p, span, label {
+            color: #f5f5f5;
         }
 
         .xmas-card {
             padding: 18px;
             border-radius: 20px;
-            background: rgba(255,255,255,0.80);
-            box-shadow: 0 16px 36px rgba(0,0,0,0.08);
+            background: rgba(255,255,255,0.92);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.35);
             margin-bottom: 14px;
+            color: #222;
+        }
+
+        .xmas-card p, .xmas-card h1, .xmas-card h2, .xmas-card h3 {
+            color: #222;
         }
 
         div.stButton > button {
             border-radius: 14px;
             padding: 0.65rem 1.05rem;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.10);
+            background: linear-gradient(180deg, #f5f5f5, #eaeaea);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.30);
+        }
+
+        div.stButton > button:hover {
+            background: linear-gradient(180deg, #ffffff, #f0f0f0);
         }
         </style>
         """,
@@ -119,12 +131,14 @@ def maybe_show_balloons() -> None:
         <style>
         #balloons { position:fixed; inset:0; pointer-events:none; z-index:9999; }
         .b {
-            position:absolute; bottom:-100px; width:50px; height:70px;
-            border-radius:50%; background:red; animation:fly 2s ease-out forwards;
+            position:absolute; bottom:-120px; width:52px; height:72px;
+            border-radius:50%;
+            animation:fly 2.2s ease-out forwards;
+            opacity:0.9;
         }
-        .b:nth-child(1){ left:20%; background:#c00; }
-        .b:nth-child(2){ left:50%; background:#0a7; animation-delay:.2s; }
-        .b:nth-child(3){ left:80%; background:#da0; animation-delay:.4s; }
+        .b:nth-child(1){ left:20%; background:#c62828; }
+        .b:nth-child(2){ left:50%; background:#2e7d32; animation-delay:.2s; }
+        .b:nth-child(3){ left:80%; background:#f9a825; animation-delay:.4s; }
 
         @keyframes fly {
             to { transform:translateY(-120vh); opacity:0; }
@@ -172,11 +186,9 @@ def goto_page(page: str) -> None:
 def init_state() -> None:
     st.session_state.setdefault("page", "card")
     st.session_state.setdefault("message_shown", False)
-    st.session_state.setdefault("validated_name", None)
     st.session_state.setdefault("final_shown", False)
     st.session_state.setdefault("show_balloons_once", False)
     st.session_state.setdefault("coupon", None)
-    st.session_state.setdefault("coupon_details", None)
     st.session_state.setdefault("compliment", None)
 
 
@@ -188,17 +200,15 @@ def show_coupon_generator() -> None:
     if st.button("🎟️ Gutschein ziehen"):
         title, detail = random.choice(COUPONS)
         st.session_state.coupon = title
-        st.session_state.coupon_details = detail
+        st.caption(detail)
 
     if st.session_state.get("coupon"):
         st.success(st.session_state.coupon)
-        st.caption(st.session_state.coupon_details)
 
 
 def show_compliment_machine() -> None:
     st.subheader("🧡 Kompliment-Maschine")
     mode = st.selectbox("Was brauchst du heute?", list(COMPLIMENT_BANK.keys()))
-
     if st.button("✨ Gib mir eins!"):
         st.session_state.compliment = random.choice(COMPLIMENT_BANK[mode])
 
@@ -207,7 +217,7 @@ def show_compliment_machine() -> None:
 
 
 # =============================================================================
-# 🎁 PAGE 1: CARD
+# 🎁 PAGE 1
 # =============================================================================
 def render_card_page() -> None:
     st.title(APP_TITLE)
@@ -220,21 +230,17 @@ def render_card_page() -> None:
     if not name or not validate_name(name):
         return
 
-    st.session_state.validated_name = name.strip()
-
     st.markdown('<div class="xmas-card">', unsafe_allow_html=True)
-    show_message = (
+    message = (
         f"Liebe {name},\n\n"
-        "ich wünsche dir von Herzen wunderschöne Weihnachten 🎄✨\n"
-        "voller Wärme, Lachen und ganz vielen schönen Momenten.\n\n"
+        "ich wünsche dir wunderschöne Weihnachten 🎄✨\n\n"
         "Danke, dass es dich gibt ❤️"
     )
-    
     if not st.session_state.message_shown:
-        typing_effect(show_message)
+        typing_effect(message)
         st.session_state.message_shown = True
     else:
-        st.markdown(show_message)
+        st.markdown(message)
 
     st.info(f"⏳ Noch {days_until_christmas()} Tage bis Weihnachten")
     st.markdown("</div>", unsafe_allow_html=True)
@@ -250,7 +256,7 @@ def render_card_page() -> None:
 
 
 # =============================================================================
-# 📸 PAGE 2: GALLERY
+# 📸 PAGE 2
 # =============================================================================
 def render_gallery_page() -> None:
     st.title("📸 Kleine Erinnerungen")
@@ -269,7 +275,7 @@ def render_gallery_page() -> None:
 
 
 # =============================================================================
-# 💌 PAGE 3: FINAL
+# 💌 PAGE 3
 # =============================================================================
 def render_final_page() -> None:
     st.title("🎁 Deine Weihnachtskarte")
