@@ -25,7 +25,7 @@ PHOTO_PATHS: List[str] = [
 ]
 
 PHOTO_CAPTIONS: List[str] = [
-    "Unser Moment 1 – ich musste so lachen 😄",
+    "Mier hends scho als chlini gschwüsterti immer guet gha😄",
     "Unser Moment 2 – einfach typisch wir ❤️",
     "Unser Moment 3 – ein kleines Abenteuer ✨",
     "Unser Moment 4 – das war so schön 🥹",
@@ -33,37 +33,35 @@ PHOTO_CAPTIONS: List[str] = [
 ]
 
 FINAL_PERSONAL_TEXT = (
-    "Liebe Schwester\n\n"
-    "Danke für all die Momente dieses Jahr – für dein Herz, deinen Humor "
-    "und dafür, dass du immer da bist.\n\n"
-    "Ich freue mich auf alles, was kommt – und vor allem auf Zeit mit dir. ❤️\n\n"
+    "Liebi Moana\n\n"
+    "Danke für all die schöne Moment womer bisher hend döffe zeme ha "
+    "und dafür, dass du immer da bist, wemer dich bruucht.\n\n"
+    "Du döfsch Stolz sie uf alles was du bisher erreicht hesch."
+    "Bliib wie du bisch..\n\n"
+    "Ich freue mich auf alles, was chund und uf viele witeri schöni Moment zeme mit Dir❤️\n\n"
     "Frohe Weihnachten! 🎄✨"
 )
 
 # 🎁 Gutschein-Generator
 COUPONS: List[Tuple[str, str]] = [
-    ("☕ Kaffee-Date", "Ein Kaffee geht auf mich – du bestimmst Ort & Zeit."),
-    ("🍪 Guetzli-Abend", "Gemeinsam Guetzli backen (inkl. Naschen 😄)."),
-    ("🎬 Filmabend", "Film deiner Wahl + Snacks deiner Wahl."),
-    ("🥐 Brunch", "Gemütlicher Brunch – ich lade ein."),
-    ("🏃 Squash-Match", "Revanche! (oder freundschaftlich… 🤭)"),
+    ("☕ Kaffee-Date", "Gömer mal zeme im Magdalena go käffele."),
+    ("🍪 Guetzli-Abend", "Gemeinsam Guetzli backen oder Lebkuechehuus."),
+    ("🏃 Squash-Match", "Gömer doch mal zeme go squashe oder im Früehlig wieder go Tennis spiele"),
 ]
 
 # 🧡 Kompliment-Maschine
 COMPLIMENT_BANK = {
     "Motivation": [
-        "Du packsch das. Du hesch scho so viel gschafft – und das chunnt vo dim Drive. 💪",
-        "Ich glaub fest a dich – au wenn du grad zwiefelsch. ✨",
-        "Du bisch stärker als du meinst. Wirklich.",
+        "Du packsch das. Du hesch scho so viel gschafft 💪",
+        "Ich glaub fest a dich. ✨",
+        "Du bisch stärker als du meinst.",
     ],
     "Humor": [
         "Wenn Weihnachten e Sport wär, wärsch du MVP im Guetzli-Nasche 😄🍪",
-        "Du bisch wie Lametta: unnötig, aber ohni di fehlts eifach 😆✨",
-        "Stress? Mach mer nöd. Mir lache drüber 😌",
     ],
     "Herz": [
         "Ich bi mega dankbar für dich. Du bisch e grossi Bereicherung ❤️",
-        "Mit dir fühlt sich alles e bitzli sicherer und wärmer a.",
+        "Uf dich chamer immer zähle",
         "Du hesch es grosses Herz – und das merkt jede.",
     ],
 }
@@ -227,9 +225,11 @@ def render_card_page() -> None:
     st.markdown('<div class="xmas-card">', unsafe_allow_html=True)
     show_message = (
         f"Liebe {name},\n\n"
-        "ich wünsche dir wunderschöne Weihnachten 🎄✨\n\n"
+        "ich wünsche dir von Herzen wunderschöne Weihnachten 🎄✨\n"
+        "voller Wärme, Lachen und ganz vielen schönen Momenten.\n\n"
         "Danke, dass es dich gibt ❤️"
     )
+    
     if not st.session_state.message_shown:
         typing_effect(show_message)
         st.session_state.message_shown = True
