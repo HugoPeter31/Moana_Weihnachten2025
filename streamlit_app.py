@@ -35,9 +35,9 @@ PHOTO_CAPTIONS: List[str] = [
 FINAL_PERSONAL_TEXT = (
     "Liebi Moana\n\n"
     "Danke für all die schöne Moment womer bisher hend döffe zeme ha "
-    "und dafür, dass du immer da bist, wemer dich bruucht.\n\n"
+    "und dafür, dass du immer da bisch, wemer dich bruucht.\n\n"
     "Du döfsch Stolz sie uf alles was du bisher erreicht hesch."
-    "Bliib wie du bisch..\n\n"
+    "Bliib wie du bisch.\n\n"
     "Ich freue mich auf alles, was chund und uf viele witeri schöni Moment zeme mit Dir❤️\n\n"
     "Frohe Weihnachten! 🎄✨"
 )
