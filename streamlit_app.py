@@ -205,7 +205,8 @@ def render_card_page() -> None:
     st.markdown('<div class="xmas-card">', unsafe_allow_html=True)
     message = (
         f"Liebe {name},\n\n"
-        "ich wünsche dir wunderschöne Weihnachten 🎄✨\n\n"
+        "ich wünsche dir von Herzen wunderschöne Weihnachten 🎄✨\n"
+        "voller Wärme, Lachen und ganz vielen schönen Momenten.\n\n"
         "Danke, dass es dich gibt ❤️"
     )
     if not st.session_state.message_shown:
