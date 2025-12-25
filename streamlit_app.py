@@ -250,7 +250,7 @@ def render_gallery_page() -> None:
 # 💌 PAGE 3
 # =============================================================================
 def render_final_page() -> None:
-    st.title("🎁 Deine Weihnachtskarte")
+    st.title("🎁 Für Moana")
 
     st.markdown('<div class="xmas-card">', unsafe_allow_html=True)
     if not st.session_state.final_shown:
