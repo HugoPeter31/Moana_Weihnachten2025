@@ -19,17 +19,17 @@ RECIPIENT_RELATION = "eine meiner Lieblingsschwestern"
 PHOTO_PATHS: List[str] = [
     "IMG_2873.jpeg",
     "IMG_5603.jpeg",
-    "IMG_0634.jpeg",
     "IMG_7753.jpeg",
+    "IMG_0634.jpeg",
     "IMG_8238.jpeg",
 ]
 
 PHOTO_CAPTIONS: List[str] = [
     "Mier hends scho als chlini chindli immer guet gha😄",
     "Im Trio hemer vieli schöni Moment döffe zeme ha und hoffentlich au nu in Zuekunft❤️",
-    "Unser Moment 3 – ein kleines Abenteuer ✨",
-    "Unser Moment 4 – das war so schön 🥹",
-    "Unser Moment 5 – und davon bitte mehr! 🎁",
+    "Mit dier hani scho schöni Erlebnis weg vo deheime döffe ha, sigs im Sprachufenthalt in Eastbourne✨",
+    "oder uf üsem intensive Interrail-Trip vo Wien bis nach Bologna 🇮🇹​",
+    "Ich freue mich uf witeri sportlichi, abenteurlustigi Ziite mit dier 🤸‍♀️​",
 ]
 
 FINAL_PERSONAL_TEXT = (
