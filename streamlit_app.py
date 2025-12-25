@@ -61,18 +61,29 @@ def show_header() -> None:
 
 
 def show_personal_message(name: str) -> None:
-    """Show the animated Christmas message."""
+    """
+    Show the animated Christmas message only once.
+    Using session_state prevents re-triggering the typing animation.
+    """
     message = (
         f"Liebe {name},\n\n"
         "ich wünsche dir von Herzen wunderschöne Weihnachten 🎄✨\n"
         "voller Wärme, Lachen und ganz vielen schönen Momenten.\n\n"
         "Danke, dass es dich gibt ❤️"
     )
-    typing_effect(message)
+
+    if not st.session_state.get("message_shown", False):
+        typing_effect(message)
+        st.session_state.message_shown = True
+    else:
+        st.markdown(message)
 
 
 def show_surprise() -> None:
-    """Display a random Christmas wish as a small interactive surprise."""
+    """
+    Display a random Christmas surprise.
+    The chosen surprise is stored so it does not change unexpectedly.
+    """
     wishes = [
         "🎁 Lebkuchenhaus backen",
         "✨ Gemeinsam Guetzle",
@@ -80,7 +91,10 @@ def show_surprise() -> None:
     ]
 
     if st.button("🎄 Überraschung öffnen"):
-        st.success(random.choice(wishes))
+        st.session_state.last_surprise = random.choice(wishes)
+
+    if "last_surprise" in st.session_state:
+        st.success(st.session_state.last_surprise)
 
 
 # ----------------------------
@@ -89,7 +103,7 @@ def show_surprise() -> None:
 def main() -> None:
     """
     Main entry point of the Streamlit app.
-    Orchestrates user input, validation, and UI flow.
+    Controls application flow and ensures a smooth user experience.
     """
     show_header()
 
