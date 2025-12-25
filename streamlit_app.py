@@ -9,7 +9,7 @@ import random
 # Configuration constants
 # ----------------------------
 APP_TITLE = "🎄 Frohe Weihnachten 🎄"
-RECIPIENT_RELATION = "meiner Lieblingsschwester"
+RECIPIENT_RELATION = "eine meiner Lieblingsschwestern"
 
 
 # ----------------------------
@@ -74,11 +74,9 @@ def show_personal_message(name: str) -> None:
 def show_surprise() -> None:
     """Display a random Christmas wish as a small interactive surprise."""
     wishes = [
-        "🎁 Ein Jahr voller Glück und Gesundheit",
-        "✨ Viele kleine Wunder im Alltag",
-        "☕ Gemütliche Winterabende mit guten Gesprächen",
-        "🌟 Mut für neue Träume und Abenteuer",
-        "❤️ Zeit für dich und die Menschen, die du liebst",
+        "🎁 Lebkuchenhaus backen",
+        "✨ Gemeinsam Guetzle",
+        "☕ Zusammen Squashen",
     ]
 
     if st.button("🎄 Überraschung öffnen"):
