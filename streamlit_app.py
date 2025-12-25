@@ -24,9 +24,9 @@ PHOTO_PATHS: List[str] = [
 ]
 
 PHOTO_CAPTIONS: List[str] = [
-    "Mier hends scho als chlini chindli immer guet gha 😄",
+    "Mier hends scho als chlini chindli immer guet gha und zeme döffe e wunderschöni Chindheit gnüsse 😄",
     "Im Trio hemer vieli schöni Moment döffe zeme ha ❤️",
-    "Erlebnis weg vo deheime – Sprachufenthalt Eastbourne ✨",
+    "Gmeinsami Erlebnis weg vo deheime – Sprachufenthalt Eastbourne oder ✨",
     "Interrail vo Wien bis Bologna 🇮🇹",
     "Ich freue mich uf witeri sportlichi & abenteurlustigi Ziite 🤸‍♀️",
 ]
@@ -47,23 +47,6 @@ COUPONS: List[Tuple[str, str]] = [
     ("🍪 Guetzli-Abend", "Guetzli backe oder Lebkuechehuus."),
     ("🏃 Squash-Match", "Squash oder im Frühlig Tennis spiele."),
 ]
-
-COMPLIMENT_BANK = {
-    "Motivation": [
-        "Du packsch das. Du hesch scho so viel gschafft 💪",
-        "Ich glaub fest a dich ✨",
-        "Du bisch stärker als du meinst.",
-    ],
-    "Humor": [
-        "Wenn Weihnachten e Sport wär, wärsch du MVP im Guetzli-Nasche 😄🍪",
-    ],
-    "Herz": [
-        "Ich bi mega dankbar für dich ❤️",
-        "Uf dich chamer immer zähle",
-        "Du hesch es grosses Herz.",
-    ],
-}
-
 
 # =============================================================================
 # 🎨 DARK GREEN CHRISTMAS THEME + BALLOONS
