@@ -172,7 +172,6 @@ def init_state() -> None:
     st.session_state.setdefault("final_shown", False)
     st.session_state.setdefault("show_balloons_once", False)
     st.session_state.setdefault("coupon", None)
-    st.session_state.setdefault("compliment", None)
 
 
 # =============================================================================
@@ -187,16 +186,6 @@ def show_coupon_generator() -> None:
 
     if st.session_state.get("coupon"):
         st.success(st.session_state.coupon)
-
-
-def show_compliment_machine() -> None:
-    st.subheader("🧡 Kompliment-Maschine")
-    mode = st.selectbox("Was brauchst du heute?", list(COMPLIMENT_BANK.keys()))
-    if st.button("✨ Gib mir eins!"):
-        st.session_state.compliment = random.choice(COMPLIMENT_BANK[mode])
-
-    if st.session_state.get("compliment"):
-        st.success(st.session_state.compliment)
 
 
 # =============================================================================
@@ -230,7 +219,6 @@ def render_card_page() -> None:
 
     st.markdown('<div class="xmas-card">', unsafe_allow_html=True)
     show_coupon_generator()
-    show_compliment_machine()
     st.markdown("</div>", unsafe_allow_html=True)
 
     if st.button("let’s continue ➜"):
