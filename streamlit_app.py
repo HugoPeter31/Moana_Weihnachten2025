@@ -17,11 +17,11 @@ APP_TITLE = "🎄 Frohe Weihnachten 🎄"
 RECIPIENT_RELATION = "eine meiner Lieblingsschwestern"
 
 PHOTO_PATHS: List[str] = [
-    "assets/photo1.jpg",
-    "assets/photo2.jpg",
-    "assets/photo3.jpg",
-    "assets/photo4.jpg",
-    "assets/photo5.jpg",
+    "IMG_0634.jpeg",
+    "IMG_2873.jpeg",
+    "IMG_5603.jpeg",
+    "IMG_7753.jpeg",
+    "IMG_8238.jpeg",
 ]
 
 PHOTO_CAPTIONS: List[str] = [
